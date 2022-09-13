@@ -23,7 +23,11 @@ function listarTarefas() {
         checkbox.type = "checkbox";
         checkbox.name = "name";
         checkbox.id = "id";
-        console.log(checkbox.checked);
+        // console.log(checkbox.checked);
+        checkbox.addEventListener("change", () => {
+            console.log(item, checkbox.checked);
+            checkbox.checked ? todoElement.classList.add("palavra-cortada") : todoElement.classList.remove("palavra-cortada");
+        });
         checkbox.setAttribute("style", "margin-right: 10px");
         todoElement.appendChild(checkbox);
         todoElement.appendChild(tarefaText); //mostrar em tela / colocar em uma li o texto passado
